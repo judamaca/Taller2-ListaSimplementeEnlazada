@@ -22,26 +22,34 @@ public class MiLista implements ListInterface{
     @Override
     public void clear() {
         this.cabeza = null;
-
+        return;
     }
 
     @Override
     public Object getHead() {
-        return null;
-    } {
-        return cabeza;
-
+        if (this.cabeza == null) {
+            return null;
+        }
+        return this.cabeza.dato;
     }
 
 
     @Override
     public Object getTail() {
-        return null;
+        if(this.cabeza == null){
+            return null;
+        }else {
+            ListNode iterador = this.cabeza;
+            while (iterador.siguiente != null) {
+                iterador = iterador.siguiente;
+            }
+            return iterador.dato;
+        }
     }
 
     @Override
     public Object get(ListNode node) {
-        return null;
+        return node.dato;
     }
 
     @Override
