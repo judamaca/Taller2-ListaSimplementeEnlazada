@@ -49,21 +49,59 @@ public class MiLista implements ListInterface{
 
     @Override
     public Object get(ListNode node) {
+        if (node == null) {
+            return null;
+        }
         return node.dato;
     }
 
     @Override
     public Object search(Object object) {
-        return null;
+        try {
+            if (this.cabeza == null) {
+                System.out.println("Sin contenido");
+                return false;
+            }
+            ListNode actual = this.cabeza;
+            while (actual != null) {
+                if (actual.dato != null && actual.dato.equals(object)) {
+                    System.out.println("Objeto encontrado");
+                    return actual.dato;
+                }
+                actual = actual.siguiente;
+            }
+            return null;
+        }
+        catch (Exception e) {
+            System.out.println("Ocurrió un error");
+            return null;
+        }
     }
 
     @Override
     public boolean add(Object object) {
-        return false;
+        ListNode newNode = new ListNode(object);
+        try {
+            if (this.cabeza == null) {
+                this.cabeza = newNode;
+                return true;
+            }
+            ListNode actual = this.cabeza;
+            while (actual.siguiente != null) {
+                actual = actual.siguiente;
+            }
+            actual.siguiente = newNode;
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Ocurrió un error");
+            return false;
+        }
     }
 
     @Override
     public boolean insert(ListNode node, Object object) {
+
         return false;
     }
 
@@ -118,7 +156,25 @@ public class MiLista implements ListInterface{
 
     @Override
     public boolean contains(Object object) {
-        return false;
+        try {
+            if (this.cabeza == null) {
+                System.out.println("Sin contenido");
+                return false;
+            }
+            ListNode actual = this.cabeza;
+            while (actual != null) {
+                if (actual.dato != null && actual.dato.equals(object)) {
+                    System.out.println("Sí está contenido el dato");
+                    return true;
+                }
+                actual = actual.siguiente;
+            }
+            return false;
+        }
+        catch (Exception e) {
+            System.out.println("Ocurrió un error");
+            return false;
+        }
     }
 
     @Override
