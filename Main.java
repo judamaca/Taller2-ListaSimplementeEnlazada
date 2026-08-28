@@ -28,8 +28,12 @@ void main() {
 
     System.out.println(miLista.get(miLista.cabeza));
     miLista.add("Juansebaschu");
-    System.out.println(miLista.toString());
+
     System.out.println(miLista.contains("Juansebascho"));
     System.out.println(miLista.search("Angela"));
+
+    miLista.insert(miLista.cabeza.siguiente.siguiente, "Juju");
+    miLista.insert("Juju", "Jojo");
+    System.out.println(miLista.toString());
 
 }

@@ -5,7 +5,11 @@ public class MiLista implements ListInterface{
 
     @Override
     public boolean isEmpty() {
-        return false;
+        if (this.cabeza == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -101,13 +105,48 @@ public class MiLista implements ListInterface{
 
     @Override
     public boolean insert(ListNode node, Object object) {
-
-        return false;
+        try {
+            if (this.cabeza == null) {
+                return false;
+            }
+            ListNode newNode = new ListNode(object);
+            ListNode actual = this.cabeza;
+            while (actual != null) {
+                if (node == actual) {
+                    newNode.siguiente = actual.siguiente;
+                    actual.siguiente = newNode;
+                    return true;
+                }
+                actual = actual.siguiente;
+            }
+            return false;
+        } catch (Exception e) {
+            System.out.println("Ocurrió un error");
+            return false;
+        }
     }
 
     @Override
     public boolean insert(Object ob, Object object) {
-        return false;
+        try {
+            if (this.cabeza == null) {
+                return false;
+            }
+            ListNode newNode = new ListNode(object);
+            ListNode actual = this.cabeza;
+            while (actual != null) {
+                if (ob.equals(actual.dato)) {
+                    newNode.siguiente = actual.siguiente;
+                    actual.siguiente = newNode;
+                    return true;
+                }
+                actual = actual.siguiente;
+            }
+            return false;
+        } catch (Exception e) {
+            System.out.println("Ocurrió un error");
+            return false;
+        }
     }
 
     @Override
@@ -141,7 +180,6 @@ public class MiLista implements ListInterface{
             iterador.siguiente = nuevaCola;
         }
         return true;
-
     }
 
     @Override
