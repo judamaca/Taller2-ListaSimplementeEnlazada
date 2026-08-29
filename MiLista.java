@@ -184,6 +184,17 @@ public class MiLista implements ListInterface{
 
     @Override
     public boolean set(ListNode node, Object object) {
+        if (this.cabeza == null) {
+            return false;
+        }
+        ListNode actual = this.cabeza;
+        while (actual != null) {
+            if (node == actual) {
+                node.dato = object;
+                return true;
+            }
+        actual = actual.siguiente;
+        }
         return false;
     }
 

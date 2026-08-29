@@ -5,11 +5,11 @@ void main() {
 
     miLista.insertHead(0);
 
-//    System.out.println(miLista.toString());
+//  System.out.println(miLista.toString());
     miLista.insertHead("Juan");
-    miLista.insertHead("Albert Einstein");
+//  miLista.insertHead("Albert Einstein");
 
-//    System.out.println(miLista.toString());
+//  System.out.println(miLista.toString());
 
     miLista.insertTail("Angela");
 
@@ -34,6 +34,9 @@ void main() {
 
     miLista.insert(miLista.cabeza.siguiente.siguiente, "Juju");
     miLista.insert("Juju", "Jojo");
+    miLista.set(miLista.cabeza.siguiente, "AAAAAAAGHHCHU");
+
     System.out.println(miLista.toString());
+
 
 }
