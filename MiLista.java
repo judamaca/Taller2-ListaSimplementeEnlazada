@@ -200,6 +200,19 @@ public class MiLista implements ListInterface{
 
     @Override
     public boolean remove(ListNode node) {
+
+        if (node == cabeza) {
+            this.cabeza = this.cabeza.siguiente;
+            return true;
+        }
+        ListNode actual = this.cabeza;
+        while (actual != null && actual.siguiente != null) {
+            if (actual.siguiente == node) {
+                actual.siguiente = actual.siguiente.siguiente;
+                return true;
+            }
+            actual = actual.siguiente;
+        }
         return false;
     }
 
@@ -224,11 +237,6 @@ public class MiLista implements ListInterface{
             System.out.println("Ocurrió un error");
             return false;
         }
-    }
-
-    @Override
-    public Iterator<ListNode> iterator() {
-        return null;
     }
 
     @Override
@@ -276,5 +284,10 @@ public class MiLista implements ListInterface{
         return "MiLista{" +
                 "cabeza=" + cabeza +
                 '}';
+    }
+
+    @Override
+    public Iterator<ListNode> iterator() {
+        return null;
     }
 }

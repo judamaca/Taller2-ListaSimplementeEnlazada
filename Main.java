@@ -37,6 +37,7 @@ void main() {
     miLista.set(miLista.cabeza.siguiente, "AAAAAAAGHHCHU");
 
     System.out.println(miLista.toString());
-
+    miLista.remove(miLista.cabeza.siguiente.siguiente);
+    System.out.println(miLista.toString());
 
 }
