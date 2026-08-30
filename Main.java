@@ -40,4 +40,7 @@ void main() {
     miLista.remove(miLista.cabeza.siguiente.siguiente);
     System.out.println(miLista.toString());
 
+    Object[] arreglo = miLista.toArray();
+    System.out.println(Arrays.toString(arreglo));
+
 }
