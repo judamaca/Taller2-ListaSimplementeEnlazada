@@ -42,5 +42,4 @@ void main() {
 
     Object[] arreglo = miLista.toArray();
     System.out.println(Arrays.toString(arreglo));
-
 }

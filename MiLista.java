@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class MiLista implements ListInterface{
@@ -109,7 +110,7 @@ public class MiLista implements ListInterface{
     @Override
     public boolean insert(Object ob, Object object) {
 
-        if (this.cabeza == null || node == null) {
+        if (this.cabeza == null || ob == null) {
             return false;
             }
 
@@ -252,7 +253,7 @@ public class MiLista implements ListInterface{
     }
 
     @Override
-    public Object getBeforeTo() {
+    public Object getBeforeTo(ListNode node) {
 
         if (this.cabeza == null || node == null) {
             return null;
@@ -272,34 +273,6 @@ public class MiLista implements ListInterface{
         return null;
     }
 
-    @Override
-    public Object getBeforeTo(ListNode node) {
-
-        if (this.cabeza == null || node == null) {
-            return null;
-        }
-
-        if (this.cabeza == node) {
-            return null;
-        }
-
-        ListNode actual = this.cabeza;
-        while (actual.siguiente != null) {
-            if (actual.siguiente == node) {
-                return actual.dato;
-            }
-            actual = actual.siguiente;
-        }
-        return null;
-    }
-
-    @Override
-    public Object getNextTo() {
-        if (this.actual == null || this.actual.siguiente == null) {
-            return null;
-        }
-        return this.actual.siguiente.dato;
-    }
 
     @Override
     public Object getNextTo(ListNode node) {
@@ -341,8 +314,11 @@ public class MiLista implements ListInterface{
             return listaOrdenada;
         }
         Arrays.sort(arreglo);
-        for (int i = 0; i < arreglo.length; i++) {
-            listaOrdenada.add(arreglo[i]);
+        ListNode actual = this.cabeza;
+        int i = 0;
+        while (actual != null) {
+            actual.dato = arreglo[i];
+            i++;
         }
         return listaOrdenada;
     }
