@@ -203,7 +203,7 @@ public class MiLista implements ListInterface{
 
     @Override
     public Object[] toArray() {
-
+        if (this.cabeza == null) return new Object[0];
         ListNode iterador = this.cabeza;
         int contador = 1;
         while (iterador.siguiente != null) {
@@ -309,18 +309,16 @@ public class MiLista implements ListInterface{
     public MiLista sortList() {
         Object[] arreglo = this.toArray();
 
-        MiLista listaOrdenada = new MiLista();
-        if (arreglo.length == 0) {
-            return listaOrdenada;
-        }
+
         Arrays.sort(arreglo);
         ListNode actual = this.cabeza;
         int i = 0;
         while (actual != null) {
             actual.dato = arreglo[i];
             i++;
+            actual = actual.siguiente;
         }
-        return listaOrdenada;
+        return this;
     }
 
     @Override
