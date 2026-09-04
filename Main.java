@@ -91,9 +91,8 @@ void main() {
     lista.sortList();
     System.out.println("    Después de ordenar: " + Arrays.toString(lista.toArray()));
 
-    // 15. toString() e iterator()
+    // 15. toString()
     System.out.println("\n15. toString() original: " + lista.toString());
-    System.out.println("    iterator(): " + lista.iterator());
 
     // 16. clear()
     System.out.println("\n16. clear() - Vaciando la lista por completo...");

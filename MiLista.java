@@ -327,9 +327,4 @@ public class MiLista implements ListInterface{
                 "cabeza=" + cabeza +
                 '}';
     }
-
-    @Override
-    public Iterator<ListNode> iterator() {
-        return null;
-    }
 }

@@ -38,7 +38,6 @@ public interface ListInterface {
      */
     public boolean contains(Object object);
 
-    public Iterator<ListNode> iterator();
 
     public Object[] toArray();
 
