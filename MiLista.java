@@ -276,7 +276,7 @@ public class MiLista implements ListInterface{
 
     @Override
     public Object getNextTo(ListNode node) {
-        if (node == null) {
+        if (node == null || node.siguiente == null) {
             return null;
         }
         return node.siguiente.dato;
