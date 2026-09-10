@@ -266,7 +266,7 @@ public class MiLista implements ListInterface{
         ListNode actual = this.cabeza;
         while (actual.siguiente != null) {
             if (actual.siguiente == node) {
-                return actual;
+                return actual.dato;
             }
             actual = actual.siguiente;
         }
@@ -279,7 +279,7 @@ public class MiLista implements ListInterface{
         if (node == null) {
             return null;
         }
-        return node.siguiente;
+        return node.siguiente.dato;
     }
 
     @Override

@@ -59,10 +59,7 @@ void main() {
 
     // 10. getBeforeTo(ListNode) y getNextTo(ListNode)
     // Nota: Como devuelve Object, hacemos un cast a ListNode para poder imprimir su dato
-    ListNode nodoAnterior = (ListNode) lista.getBeforeTo(nodo20);
-    ListNode nodoSiguiente = (ListNode) lista.getNextTo(nodo20);
-    System.out.println("\n10. getBeforeTo(nodo99) [Debe ser 10]: " + (nodoAnterior != null ? nodoAnterior.dato : "null"));
-    System.out.println("    getNextTo(nodo99) [Debe ser 22]: " + (nodoSiguiente != null ? nodoSiguiente.dato : "null"));
+    System.out.println("get(nodo20): " + lista.getNextTo(nodo20));
 
     // 11. remove(ListNode)
     System.out.println("\n11. remove(nodo99) - Eliminando ese nodo específico:");
